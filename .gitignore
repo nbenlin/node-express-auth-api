@@ -4,8 +4,10 @@
 
 ### dotenv ###
 .env
+config.env
+config.*
 
-
+### config ###
 config/
 
 ### Node ###

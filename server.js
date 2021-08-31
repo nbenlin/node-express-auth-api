@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDatabase = require("./helpers/database/connectDatabase");
-const customErrorHandler = require("./middlewares/customErrorHandler");
+const customErrorHandler = require("./middlewares/error/customErrorHandler");
 const routers = require("./routers");
 
 const app = express();
