@@ -1,9 +1,11 @@
 const User = require("../models/User");
+const CustomError = require("../helpers/error/CustomError");
+const asynErrorWrapper = require("express-async-handler");
 
-const register = async (req, res, next) => {
+const register = asynErrorWrapper(async (req, res, next) => {
   const name = "Nihat Benli";
   const email = "nihatbenli.nb@gmail.com";
-  const password = "123123123";
+  const password = "123";
 
   const user = await User.create({
     name,
@@ -12,7 +14,7 @@ const register = async (req, res, next) => {
   });
 
   res.status(200).json({ success: true, data: user });
-};
+});
 
 module.exports = {
   register,
