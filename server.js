@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connectDatabase = require("./helpers/database/connectDatabase");
+const customErrorHandler = require("./middlewares/customErrorHandler");
 const routers = require("./routers");
 
 const app = express();
@@ -16,6 +17,9 @@ connectDatabase();
 
 // Routers Middleware
 app.use("/api", routers);
+
+// Error Handler
+app.use(customErrorHandler);
 
 app.listen(PORT, () => {
   console.log(`App started on ${PORT} : ${process.env.NODE_ENV}`);
