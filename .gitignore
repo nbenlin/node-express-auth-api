@@ -5,6 +5,9 @@
 ### dotenv ###
 .env
 
+
+config/
+
 ### Node ###
 # Logs
 logs
