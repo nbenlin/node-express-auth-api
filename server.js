@@ -6,6 +6,8 @@ const routers = require("./routers");
 
 const app = express();
 
+// Express - Body Middleware
+app.use(express.json());
 // Environment Variables
 dotenv.config({
   path: "./config/env/config.env",
