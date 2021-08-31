@@ -3,7 +3,6 @@ const CustomError = require("../helpers/error/CustomError");
 const asynErrorWrapper = require("express-async-handler");
 
 const register = asynErrorWrapper(async (req, res, next) => {
-  console.log(req.body);
   const { name, email, password } = req.body;
 
   const user = await User.create({
