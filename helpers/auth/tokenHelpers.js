@@ -19,4 +19,11 @@ const sendJwtToClient = (user, res) => {
       },
     });
 };
-module.exports = sendJwtToClient;
+
+const isTokenIncludedToHeaders = (req) => {
+  return (
+    req.headers.authorization && req.headers.authorization.startsWith("Bearer:")
+  );
+};
+
+module.exports = { sendJwtToClient, isTokenIncludedToHeaders };
